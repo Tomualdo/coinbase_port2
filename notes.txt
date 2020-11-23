@@ -1,0 +1,122 @@
+{% comment %} nastavit ak cena stupa nekupovat (cena poslednej kupy > cena aktualnej kupy za urcity cas (NIE VSAK max window!!!POZOR) )
+window okno nastavit podla grafu a nechat len tolko zaznamov candles kolko je potrebne
+
+ak buy signal je pod SMA viac ako ratio
+
+do product_minute_candlestick nahrat data ak su
+
+nahraj aspon dva dni do product_minute_candlestick
+
+nastav v strategy maximum nakupov nakupov + funds na jeden nakup {% endcomment %}
+
+{% comment %} zmen prodct na current product v strategy vlozenim do param funkcie {% endcomment %}
+
+do strategy zadaj min buy time a min buy time special
+
+*************GET PRODUCT*********************
+{
+    'base_currency': 'OMG',
+    'base_increment': '0.10000000',
+    'base_max_size': '500000.00000000',
+    'base_min_size': '1.00000000',
+    'cancel_only': False,
+    'display_name': 'OMG/EUR',
+    'id': 'OMG-EUR',
+    'limit_only': False,
+    'margin_enabled': False,
+    'max_market_funds': '100000',
+    'min_market_funds': '1',
+    'post_only': False,
+    'quote_currency': 'EUR',
+    'quote_increment': '0.00010000',
+    'status': 'online',
+    'status_message': '',
+    'trading_disabled': False,
+}
+
+
+*****************GET ACCOUNT**************
+{
+    'available': '0.6',
+    'balance': '0.6000000000000000',
+    'currency': 'OMG',
+    'hold': '0.0000000000000000',
+    'id': '0a7c8365-1553-4d4c-9a4a-2be73184ca63',
+    'profile_id': '9a34ae8a-ff8f-4e7a-8ad3-ac3f61d2a175',
+    'trading_enabled': True,
+}
+
+
+**************************************BUY**************************************
+order_market('OMG-EUR',1)
+{
+    'created_at': '2020-10-29T18:03:45.290475Z',
+    'executed_value': '0',
+    'fill_fees': '0',
+    'filled_size': '0',
+    'funds': '0.99502',
+    'id': 'ee7b5eb6-8b3e-46df-86ff-497b2ca42659',
+    'post_only': False,
+    'product_id': 'OMG-EUR',
+    'settled': False,
+    'side': 'buy',
+    'specified_funds': '1',
+    'status': 'pending',
+    'stp': 'dc',
+    'type': 'market',
+}
+{
+    'created_at': '2020-10-29T18:32:38.65273Z',
+    'done_at': '2020-10-29T18:32:38.664Z',
+    'done_reason': 'filled',
+    'executed_value': '0.7642200000000000',
+    'fill_fees': '0.0038211000000000',
+    'filled_size': '0.30000000',
+    'funds': '0.9950200000000000',
+    'id': 'ca20105a-d873-407e-9475-9a518ce883c5',
+    'post_only': False,
+    'product_id': 'OMG-EUR',
+    'profile_id': '9a34ae8a-ff8f-4e7a-8ad3-ac3f61d2a175',
+    'settled': True,
+    'side': 'buy',
+    'specified_funds': '1.0000000000000000',
+    'status': 'done',
+    'type': 'market',
+}
+
+{'message': 'Insufficient funds'}
+
+******************************SELL**********************************
+{
+    'created_at': '2020-10-29T20:10:01.044497Z',
+    'executed_value': '0',
+    'fill_fees': '0',
+    'filled_size': '0',
+    'id': '4198b629-ebbc-4e4f-a384-c530a172fb6e',
+    'post_only': False,
+    'product_id': 'OMG-EUR',
+    'settled': False,
+    'side': 'sell',
+    'size': '1',
+    'status': 'pending',
+    'stp': 'dc',
+    'type': 'market',
+}
+
+{
+    'created_at': '2020-10-29T20:10:01.044497Z',
+    'done_at': '2020-10-29T20:10:01.104Z',
+    'done_reason': 'filled',
+    'executed_value': '2.5222000000000000',
+    'fill_fees': '0.0126110000000000',
+    'filled_size': '1.00000000',
+    'id': '4198b629-ebbc-4e4f-a384-c530a172fb6e',
+    'post_only': False,
+    'product_id': 'OMG-EUR',
+    'profile_id': '9a34ae8a-ff8f-4e7a-8ad3-ac3f61d2a175',
+    'settled': True,
+    'side': 'sell',
+    'size': '1.00000000',
+    'status': 'done',
+    'type': 'market',
+}

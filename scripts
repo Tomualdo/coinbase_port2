@@ -1,0 +1,2 @@
+find . -name "*strategy.json" | xargs grep "EUR"
+find . -name "*strategy.json" | xargs sed -i 's/"EUR_to_buy_size": 4/"EUR_to_buy_size": 4/g'
