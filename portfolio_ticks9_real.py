@@ -828,7 +828,9 @@ def on_open(ws):
                     "BAND-EUR",
                     "XLM-EUR",
                     "BCH-EUR",
-                    "BTC-EUR"
+                    "LINK-EUR",
+                    "LTC-EUR"
+                    
                     ]
             }
         ],

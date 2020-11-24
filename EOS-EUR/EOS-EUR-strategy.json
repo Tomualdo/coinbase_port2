@@ -12,7 +12,7 @@
     "out_of_bound_sell_ratio": 1.016,
     "min_buy_time_buy_ratio": 1.02,
     "min_ballance_buy": 60,
-    "EUR_to_buy_size": 45,
+    "EUR_to_buy_size": 40,
     "forced_buy": false,
     "forced_sell": false,
     "ooa_buy_size_ratio": 0.6,
