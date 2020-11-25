@@ -20,7 +20,11 @@ products = [
                     "EOS-EUR",
                     "BAND-EUR",
                     "XLM-EUR",
-                    "BCH-EUR"            
+                    "BCH-EUR",
+                    "BTC-EUR",
+                    "LINK-EUR",
+                    "LTC-EUR"
+
         ]
 
 ROOT_DIR = os.path.abspath(os.curdir)
@@ -36,6 +40,10 @@ def ledger_info(current_product,days=0):
     global today_total
     global dic
     product_folder = ROOT_DIR+'/'+current_product
+    if os.path.isfile(product_folder+'/'+current_product+'buys.json'):
+        pass
+    else:
+        return
     ledger_file = product_folder+'/'+current_product+'buys.json'
     with open(ledger_file) as json_ledger_file:
         ledger = json.load(json_ledger_file)
